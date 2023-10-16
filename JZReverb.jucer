@@ -5,23 +5,23 @@
               pluginFormats="buildStandalone,buildVST3" cppLanguageStandard="17">
   <MAINGROUP id="elNETE" name="JZReverb">
     <GROUP id="{2B1F5F1F-AAA6-5C5A-8617-0E27B694660D}" name="Source">
-      <FILE id="e0vyZd" name="utilities.h" compile="0" resource="0" file="../Diffuser/Source/utilities.h"/>
+      <FILE id="bio1Nl" name="utilities.h" compile="0" resource="0" file="Source/utilities.h"/>
       <GROUP id="{5D7B52B2-BF20-D10B-64CC-1C30DAF5DA35}" name="Reverb">
         <FILE id="q4iwYS" name="JZReverb.h" compile="0" resource="0" file="Source/JZReverb.h"/>
         <FILE id="Bx3uFo" name="JZReverb.cpp" compile="1" resource="0" file="Source/JZReverb.cpp"/>
-        <GROUP id="{8E2CD2E5-0E62-C1F9-D31D-0A855A97E766}" name="LFD">
+        <GROUP id="{8E2CD2E5-0E62-C1F9-D31D-0A855A97E766}" name="FDN">
           <FILE id="aSiqbX" name="FDN.cpp" compile="1" resource="0" file="Source/FDN.cpp"/>
           <FILE id="er5xZ6" name="FDN.h" compile="0" resource="0" file="Source/FDN.h"/>
         </GROUP>
         <GROUP id="{A9933875-FD07-4DAF-80F3-ADBBA2ADC90A}" name="Diffuser">
-          <FILE id="Z5AAKC" name="Delayer.cpp" compile="1" resource="0" file="../Diffuser/Source/Delayer.cpp"/>
-          <FILE id="vfx9u1" name="Delayer.h" compile="0" resource="0" file="../Diffuser/Source/Delayer.h"/>
-          <FILE id="irhZNq" name="Diffuser.cpp" compile="1" resource="0" file="../Diffuser/Source/Diffuser.cpp"/>
-          <FILE id="pX0LWK" name="Diffuser.h" compile="0" resource="0" file="../Diffuser/Source/Diffuser.h"/>
-          <FILE id="NzsfKI" name="Hadamard.cpp" compile="1" resource="0" file="../Diffuser/Source/Hadamard.cpp"/>
-          <FILE id="UUFa8m" name="Hadamard.h" compile="0" resource="0" file="../Diffuser/Source/Hadamard.h"/>
-          <FILE id="Rm4Htw" name="Householder.cpp" compile="1" resource="0" file="../Diffuser/Source/Householder.cpp"/>
-          <FILE id="Eq1XJ1" name="Householder.h" compile="0" resource="0" file="../Diffuser/Source/Householder.h"/>
+          <FILE id="FZW7Tp" name="Delayer.cpp" compile="1" resource="0" file="Source/Delayer.cpp"/>
+          <FILE id="lsheK1" name="Delayer.h" compile="0" resource="0" file="Source/Delayer.h"/>
+          <FILE id="PkvdSV" name="Diffuser.cpp" compile="1" resource="0" file="Source/Diffuser.cpp"/>
+          <FILE id="P7ZXSe" name="Diffuser.h" compile="0" resource="0" file="Source/Diffuser.h"/>
+          <FILE id="Vi95z8" name="Hadamard.cpp" compile="1" resource="0" file="Source/Hadamard.cpp"/>
+          <FILE id="c33Vmm" name="Hadamard.h" compile="0" resource="0" file="Source/Hadamard.h"/>
+          <FILE id="EIKoyt" name="Householder.cpp" compile="1" resource="0" file="Source/Householder.cpp"/>
+          <FILE id="LvwWPy" name="Householder.h" compile="0" resource="0" file="Source/Householder.h"/>
         </GROUP>
       </GROUP>
       <FILE id="RIa4d2" name="PluginProcessor.cpp" compile="1" resource="0"
