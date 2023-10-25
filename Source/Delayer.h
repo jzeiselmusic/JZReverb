@@ -20,6 +20,7 @@ class Delayer {
 public:
     Delayer(double length, int num_channels,
             double sampleRate, int rd_seed);
+    Delayer(std::vector<int> delay_times, int num_channels);
     
     void process(double sample);
     std::vector<double>* getSamples(void);

@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "JZReverb.h"
 
 //==============================================================================
 /**
@@ -56,4 +57,12 @@ public:
 private:
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (JZReverbAudioProcessor)
+    
+    /* define reverb modules */
+    
+    std::vector<double> diffuser_lengths = {0.011, 0.023, 0.037, 0.059};
+    std::vector<int> fdn_delay_lengths = {551, 607, 689, 731};
+    std::vector<int> rd_seeds = {10,20,30,40};
+    JZReverb reverb_left_channel = JZReverb(4, 4, diffuser_lengths, 0.7, 44100.0, rd_seeds, fdn_delay_lengths);
+    JZReverb reverb_right_channel = JZReverb(4, 4, diffuser_lengths, 0.7, 44100.0, rd_seeds, fdn_delay_lengths);
 };

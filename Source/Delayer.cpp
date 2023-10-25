@@ -56,6 +56,43 @@ Delayer::Delayer(double length, int num_channels,
     }
 }
 
+Delayer::Delayer(std::vector<int> delay_times, int num_channels)
+{
+    /* create the input and output buffers */
+    for (int i = 0; i < num_channels; ++i)
+    {
+        input_audio_buffer.push_back(0.0);
+        output_audio_buffer.push_back(0.0);
+    }
+    
+    /* constructor for a multi-channel delay module */
+    auto max = max_element(std::begin(delay_times), std::end(delay_times));
+    this->buffer_length = max[0] + 1;
+    
+    this->num_channels = num_channels;
+    
+    /* create delay channels */
+    for (int i = 0; i < num_channels; ++i)
+    {
+        std::vector<double> temp(buffer_length);
+        std::fill(temp.begin(), temp.end(), 0.0);
+        delay_channels.push_back(temp);
+    }
+    
+    /* now we need to create delay times for each channel */
+    for (int i = 0; i < num_channels; ++i)
+    {
+        delay_amounts.push_back(delay_times[i]);
+    }
+    
+    
+    /* start the delay indexes at 0 */
+    for (int i = 0; i < num_channels; ++i)
+    {
+        delay_indexes.push_back(0);
+    }
+}
+
 void Delayer::addSample(double sample)
 {
     for (int i = 0; i < num_channels; ++i)

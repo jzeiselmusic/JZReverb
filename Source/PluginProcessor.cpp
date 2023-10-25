@@ -150,11 +150,25 @@ void JZReverbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
+    double output_sample;
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
-
-        // ..do something to the data...
+        for (int sample = 0; sample < buffer.getNumSamples(); ++sample)
+        {
+            auto current_sample = buffer.getSample(channel, sample);
+            if (channel == 0)
+            {
+                /* process left channel */
+                output_sample = reverb_left_channel.processAndReturnSample(current_sample);
+            }
+            if (channel == 1)
+            {
+                /* process right channel */
+                output_sample = reverb_right_channel.processAndReturnSample(current_sample);
+            }
+            channelData[sample] = output_sample;
+        }
     }
 }
 

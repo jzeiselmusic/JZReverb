@@ -20,7 +20,7 @@ void Householder::inPlaceTransform(std::vector<double>* buffer)
 {
     // input is an array of pointers to each channel's current value
     
-    // we want to do a matrix multiplication with our hadamard matrix
+    // we want to do a matrix multiplication with our householder matrix
     // and then put the result back in the current values matrix
     
     std::vector<double> output_vals(this->householder_size);
@@ -33,8 +33,6 @@ void Householder::inPlaceTransform(std::vector<double>* buffer)
         {
             output_vals[i] += my_matrix[i][j] * buffer->at(j);
         }
-        // now scale by 1/4
-        output_vals[i] *= 0.5;
     }
     
     // put the output vals into the current vals
